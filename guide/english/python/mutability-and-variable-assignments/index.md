@@ -15,53 +15,52 @@ Here are a few things to keep in mind:
 
 *   Assigning a variable does not mean that _variable_ is the _object_. We used very specific language noting that _assignment statements_ **bind** a **name** (identifier) to an _object_. Variables can be reassigned:
 
-`python
+```python
 
-> > > a = 1 # Bind a to an object.  
-> > > id(a)  
-> > > 140355241530152  
-> > > a = 2 # Rebind a to another object.  
-> > > id(a)  
-> > > 140355241530128  
-> > > `
+>>> a = 1 # Bind a to an object.  
+>>> id(a)  
+140355241530152  
+>>> a = 2 # Rebind a to another object.  
+>>> id(a)  
+140355241530128  
+```
 
 *   Assigning two different variables to _immutable objects_ with the same value may result (not guaranteed) in them being bound to the same _object_
 
-`python
-
-> > > a = 1  
-> > > b = 1  
-> > > id(a)  
-> > > 140355241530152  
-> > > id(b) # In this case a and b are bound to the same object.  
-> > > 140355241530152  
-> > > `
+```python
+>>> a = 1  
+>>> b = 1  
+>>> id(a)  
+140355241530152  
+>>> id(b) # In this case a and b are bound to the same object.  
+140355241530152  
+```
 
 *   Assigning two different variables to _imutable objects_ with different values will always result in them being bound to different _objects_:
 
-`python
+```python
 
-> > > a = 1  
-> > > b = 2  
-> > > id(a)  
-> > > 140355241530152  
-> > > id(b) # a and b are bound to different objects.  
-> > > 140355241530128  
-> > > `
+>>> a = 1  
+>>> b = 2  
+>>> id(a)  
+140355241530152  
+>>> id(b) # a and b are bound to different objects.  
+140355241530128  
+```
 
 *   Reassigning variables does not change the original object, it binds them to a different object.
 
-`python
+```python
 
-> > > a = 1  
-> > > b = 1  
-> > > id(a)  
-> > > 140355241530152  
-> > > id(b)  
-> > > 140355241530152  
-> > > a = 2  
-> > > id(a) # a is rebound to a different object.  
-> > > 140355241530128  
-> > > id(b) # b is still bound to the original object.  
-> > > 140355241530152  
-> > > `
+>>> a = 1  
+>>> b = 1  
+>>> id(a)  
+140355241530152  
+>>> id(b)  
+140355241530152  
+>>> a = 2  
+>>> id(a) # a is rebound to a different object.  
+140355241530128  
+>>> id(b) # b is still bound to the original object.  
+40355241530152  
+```
